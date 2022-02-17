@@ -8,6 +8,8 @@
 
 <h1>The Book Store</h1>
 
+
+@* iterate through BooksViewModel to pull book info *@
 @foreach (Book b in Model.Books)
 {
     <h3>@b.Title, by @b.Author</h3>
@@ -24,5 +26,6 @@
     <br />
 }
 
+@* implement tag helper created *@
 <div page-blah="@Model.PageInfo" page-action="Index"></div>
 

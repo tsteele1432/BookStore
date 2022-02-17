@@ -7,6 +7,7 @@ namespace BookStore.Models.ViewModels
 {
     public class PageInfo
     {
+        //Create page info model
         public int TotalNumBooks { get; set; }
         public int BooksPerPage { get; set; }
         public int CurrentPage { get; set; }

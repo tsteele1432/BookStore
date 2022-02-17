@@ -11,11 +11,15 @@ namespace BookStore.Controllers
     public class HomeController : Controller
     {
 
+        // use repo pattern
         private IBookStoreRepository repo;
         public HomeController (IBookStoreRepository temp)
         {
             repo = temp;
         }
+
+        
+        //function passes values to PageInfo
         public IActionResult Index(int pageNum = 1)
         {
             int pageSize = 10;
@@ -34,6 +38,7 @@ namespace BookStore.Controllers
                 }
             };
 
+            //return BookViewModel
             return View(x);
         }
     }

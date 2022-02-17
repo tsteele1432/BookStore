@@ -27,16 +27,19 @@ namespace BookStore.Infrastructure
         public ViewContext vc { get; set; }
 
         //different than view context
-
         public PageInfo PageBlah { get; set; }
         public string PageAction { get; set; }
 
+
+        //create pagination tag helper
         public override void Process (TagHelperContext thc, TagHelperOutput tho)
         {
             IUrlHelper uh = uhf.GetUrlHelper(vc);
 
             TagBuilder final = new TagBuilder("div");
 
+
+            //create number of pages depending on number of books
             for (int i = 1; i <= PageBlah.TotalPages; i++)
             {
                 TagBuilder tb = new TagBuilder("a");

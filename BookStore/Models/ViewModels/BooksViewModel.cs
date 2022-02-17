@@ -7,6 +7,8 @@ namespace BookStore.Models.ViewModels
 {
     public class BooksViewModel
     {
+
+        //create IQuearyable 
         public IQueryable<Book> Books { get; set; }
         public PageInfo PageInfo { get; set;}
 
