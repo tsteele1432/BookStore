@@ -12,18 +12,7 @@
 @* iterate through BooksViewModel to pull book info *@
 @foreach (Book b in Model.Books)
 {
-    <h3>@b.Title, by @b.Author</h3>
-
-    <ul>
-        <li>Publisher: @b.Publisher</li>
-        <li>ISBN: @b.Isbn</li>
-        <li>Classification: @b.Classification</li>
-        <li>Category: @b.Category</li>
-        <li>Page Count: @b.PageCount</li>
-        <li>Price: $@b.Price</li>
-    </ul>
-
-    <br />
+    <partial name="BookSummary" model="b"/>
 }
 
 @* implement tag helper created *@
