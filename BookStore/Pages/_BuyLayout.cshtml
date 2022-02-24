@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+@* This page creates the shared Buy view, where the user can see their shopping cart *@
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/lib/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="bg-dark text-white p-2">
+        Book Store
+    </div>
+
+    <div class="m-1 p-1">
+        @RenderBody()
+    </div>
+</body>
+</html>

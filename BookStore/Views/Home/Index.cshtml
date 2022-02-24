@@ -6,9 +6,6 @@
 
 @model BooksViewModel
 
-<h1>The Book Store</h1>
-
-
 @* iterate through BooksViewModel to pull book info *@
 @foreach (Book b in Model.Books)
 {
@@ -16,5 +13,7 @@
 }
 
 @* implement tag helper created *@
-<div page-blah="@Model.PageInfo" page-action="Index"></div>
+<div page-blah="@Model.PageInfo" page-action="Index" page-class="btn"
+     page-class-normal="btn-outline-dark" page-class-selected="btn-primary" page-classes-enabled="true"
+     class="btn-group pull-right m-1"></div>
 

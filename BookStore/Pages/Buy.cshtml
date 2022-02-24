@@ -1,0 +1,50 @@
+﻿@page
+@model BookStore.Pages.BuyModel
+@{
+}
+
+
+@* This view creates the table for the shopping cart, showing each item
+    to be purchased with quantity and price, and the total price. *@
+
+<h2>Your Cart</h2>
+
+<table class="table table-bordered table-striped">
+
+    <thead>
+        <tr>
+            <th class="col-5">Item</th>
+            <th>Quantity</th>
+            <th>Cost</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @* iterate through each book in basket and display attributes *@
+        @foreach (var i in Model.basket.Items)
+        {
+            <tr>
+                <td>@i.Book.Title</td>
+                <td>@i.Quantity</td>
+                <td>$@i.Book.Price</td>
+                <td>@((i.Quantity * i.Book.Price).ToString("c"))</td>
+            </tr>
+        }
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="3">Total:</td>
+            <td>@Model.basket.CalculateTotal().ToString("c")</td>
+        </tr>
+    </tfoot>
+
+
+
+</table>
+
+<div>
+    <a class="btn btn-primary" href="@Model.ReturnUrl">Continue Shopping</a>
+</div>

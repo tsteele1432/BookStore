@@ -3,15 +3,39 @@
 
 @model Book
 
-<h3>@Model.Title, by @Model.Author</h3>
 
-<ul>
-    <li>Publisher: @Model.Publisher</li>
-    <li>ISBN: @Model.Isbn</li>
-    <li>Classification: @Model.Classification</li>
-    <li>Category: @Model.Category</li>
-    <li>Page Count: @Model.PageCount</li>
-    <li>Price: $@Model.Price</li>
-</ul>
 
-<br />
+<div class="card card-outline-primary m-1 p-1">
+
+
+    @* Display each book *@
+    <div class="bg-light p-1">
+        <h4>@Model.Title, by @Model.Author</h4>
+
+        <span class="badge bg-info" style="float:right">
+            Price: $@Model.Price
+        </span>
+    </div>
+
+    <ul>
+        <li>Publisher: @Model.Publisher</li>
+        <li>ISBN: @Model.Isbn</li>
+        <li>Classification: @Model.Classification</li>
+        <li>Category: @Model.Category</li>
+        <li>Page Count: @Model.PageCount</li>
+
+    </ul>
+
+
+    @*  Add to cart button adds the book to cart*@
+    <form method="post" asp-page="/Buy">
+        <input type="hidden" asp-for="@Model.BookId"/>
+        <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+        <span class="card-text">
+            <button type="submit" class="btn btn-success btn-sm float-end">Add to Cart</button>
+        </span>
+    </form>
+</div>
+
+
+
