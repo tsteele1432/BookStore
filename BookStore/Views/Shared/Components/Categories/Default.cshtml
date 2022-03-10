@@ -10,8 +10,14 @@
 
     @foreach (string c in Model)
     {
-        <a asp-controller="Home" asp-action="Index" asp-route-bookCategory="@c" asp-route-pageNum="1" 
+        <a asp-controller="Home" asp-action="Index" asp-route-bookCategory="@c" asp-route-pageNum="1"
            class="btn @(ViewBag.SelectedCategory == c ? "btn-primary" : "btn-outline-secondary")">@c</a>
     }
+
+    @* Here i used the img-fluid class to resize the image when the window is resized.
+        If the window is made smaller, the image will become smaller. 
+        This also eliminates the neeed to specify the image width, because if it already in a container of a specific size
+        it will autfill the container. *@
+    <img src="~/img/book.jpg"  class="img-fluid"/>
 </div>
 
