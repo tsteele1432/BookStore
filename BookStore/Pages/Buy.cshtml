@@ -7,10 +7,18 @@
 @* This view creates the table for the shopping cart, showing each item
     to be purchased with quantity and price, and the total price. *@
 
+@* Added progress bar *@
+<div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="70"
+         aria-valuemin="0" aria-valuemax="100" style="width:33%">
+        <span class="sr-only">33% Complete</span>
+    </div>
+</div>
+
 <h2>Your Cart</h2>
 
 @* Here I added a bootstrap feature to make the table rows hoverable with table-hover *@
-<table class="table table-bordered table-striped table-hover">
+<table class="table table-bordered table-striped table-hover table-dark">
 
     <thead>
         <tr>
